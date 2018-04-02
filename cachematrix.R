@@ -1,8 +1,13 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The function makeCacheMatrix does a "special" matrix which is actually a wrapper of the normal matrix
+## with additional cache vvariable thta holds the value of Matrix::solve function
+## The function cacheSolve takes the "special" matrix and calculates the value of the Matrix:solve function
+## if the function was not previously executed, the solve function is called and the value is stored in the wrapper variable 
+## if the function was solved previously, the function returns the previous result
 
-## Write a short comment describing this function
-
+## This fuction creates a wrapper for the matrix with additional:
+## variable to cache the solve function result
+## functions to set and get the matrix
+## functions to set and get the solve function result into and from the cache
 makeCacheMatrix <- function(x = matrix()) {
         # define the matrix
         m <- NULL
@@ -27,8 +32,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## The function cacheSolve takes the "special" matrix and calculates the value of the Matrix:solve function
+## if the function was not previously executed, the solve function is called and the value is stored in the wrapper variable 
+## if the function was solved previously, the function returns the previous result
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         # call the "special matrix" and call function getSolve from it
